@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+
+<div class="col-md-12 justify-content-center align-content-center">
+    <div class="col-md-12 justify-content-center align-content-center">
+        <p class="text-center" style="color: red;"> @ViewBag.Message </p>
+        <center>
+            @{
+                if (Context.Session.GetString("Type") == "renter")
+                {
+                    <form method="post" asp-controller="User" asp-action="BecomeLandlord">
+                        <button class="btn btn-primary"> Bliv landlord </button>
+                    </form>
+                }
+            }
+
+        </center>
+    </div>
+</div>
+
+    <h2 class="form-group col-md-4"> Hej @Context.Session.GetString("FirstName") @Context.Session.GetString("LastName") </h2>
